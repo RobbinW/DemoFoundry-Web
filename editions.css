@@ -332,3 +332,28 @@ html[data-edition] .hero { min-height:100vh; min-height:100dvh }
 .domain-clips video {display:block;width:100%;aspect-ratio:20/11;border-radius:6px;background:#e8ece6}
 .domain-clips figcaption {font:500 14px/1.4 var(--sans);color:var(--ink);margin-top:6px}
 @media(max-width:720px){.domain-clips {grid-template-columns:repeat(2,minmax(0,1fr));row-gap:14px}}
+
+@keyframes cover-settle {
+  from {transform:scale(1.025)}
+  to {transform:scale(1)}
+}
+@keyframes cover-type-in {
+  from {opacity:var(--entry-opacity,.12);transform:translateY(12px)}
+  to {opacity:1;transform:translateY(0)}
+}
+@keyframes chapter-in {
+  from {opacity:.18;transform:translateY(18px)}
+  to {opacity:1;transform:translateY(0)}
+}
+@media screen and (prefers-reduced-motion:no-preference) {
+  .hero .cover-window {animation:cover-settle 950ms cubic-bezier(.16,1,.3,1) backwards}
+  .hero :is(.project-name,.paper-title,.hero-credits,.resources) {
+    animation:cover-type-in 640ms cubic-bezier(.16,1,.3,1) var(--entry-delay,0ms) backwards;
+  }
+  .hero .project-name {--entry-opacity:.65}
+  .hero .paper-title {--entry-delay:65ms}
+  .hero .hero-credits {--entry-delay:125ms}
+  .hero .resources {--entry-delay:185ms}
+  .chapter-enter {animation:chapter-in 620ms cubic-bezier(.16,1,.3,1) backwards}
+  :is(.chapter-enter,.hero .resources,.hero .hero-credits):focus-within {animation:none}
+}

@@ -265,3 +265,19 @@ function markSection(){
 }
 addEventListener('resize',markSection);
 let frame=0;addEventListener('scroll',()=>{if(!frame)frame=requestAnimationFrame(()=>{markSection();frame=0;});},{passive:true});markSection();
+
+// Reveal stable section wrappers once, independently of their video and carousel controls.
+function revealChapters() {
+  const sections = document.querySelectorAll(
+    '.opening > *, .chapter-intro, .chapter .subhead, #pair-reel, #pair-wall, #render-grid, .stack-pipeline, .domain-row'
+  );
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('chapter-enter');
+      observer.unobserve(entry.target);
+    }
+  }, {rootMargin:'0px 0px -4% 0px'});
+  for (const section of sections) observer.observe(section);
+}
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) revealChapters();
