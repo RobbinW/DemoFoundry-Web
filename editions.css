@@ -23,11 +23,23 @@ html[data-cover=six] .cover-window {background-image:url(media/montage/demonstra
 }
 .project-name,.project-name>span:first-child {font:700 clamp(59px,7.6vw,126px)/1.02 var(--sans);letter-spacing:-.06em;margin:0}
 .project-name>span:first-child {font:inherit;letter-spacing:inherit}
-/* Tight shadows maintain legibility as individual montage tiles change. */
-.hero,header.over-cover {--cover-shadow:0 1px 2px #000a,0 2px 4px #0006}
-.hero .hero-title,.hero .hero-title h1,.hero .button,.hero .cover-foot button,header.over-cover {text-shadow:var(--cover-shadow)}
-.hero .project-name {text-shadow:0 .018em .035em #0009,0 .035em .075em #0005}
-.hero :is(.resources,.cover-foot) svg {filter:drop-shadow(0 1px 1px #0009)}
+.hero,header.over-cover {--cover-shadow:0 1px 2px #000a,0 3px 6px #0008,0 5px 12px #0004}
+.hero .hero-title,.hero .hero-title h1,.hero .cover-foot button,header.over-cover {text-shadow:var(--cover-shadow)}
+.hero .project-name {
+  display:inline-block;position:relative;isolation:isolate;
+  text-shadow:0 .025em .045em #0009,0 .055em .11em #0006;
+}
+.hero .project-name::after {
+  content:"";position:absolute;pointer-events:none;z-index:-1;
+  inset:77% -3% auto;height:.43em;
+  background:radial-gradient(ellipse closest-side,#0009 0%,#0005 48%,transparent 100%);
+  filter:blur(.07em);
+}
+.hero .resources .button {
+  text-shadow:none;
+  box-shadow:0 2px 4px #0005,0 6px 14px -3px #0007;
+}
+.hero .cover-foot svg {filter:drop-shadow(0 1px 1px #0009)}
 .hero .cover-foot {justify-content:flex-end}
 .hero .resources .button:is(a,button:enabled):is(:hover,:focus-visible) {border-color:#fff;background-color:#ffffff30}
 @media (hover:hover) and (prefers-reduced-motion:no-preference) {
