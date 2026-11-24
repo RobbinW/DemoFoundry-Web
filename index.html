@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" data-edition="02" data-cover="five" data-treatment="margin">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DemoFoundry: Toward Scalable Photorealistic Robot Data with Coding Agents and Generative Rendering</title>
+<meta name="description" content="Explore real robot recordings, their aligned simulation replays, and video demonstrations synthesized by DemoFoundry.">
+<meta name="theme-color" content="#f4f7f3">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="preload" as="image" media="(max-aspect-ratio:1/1)" href="media/montage/demonstrations-portrait.jpg">
+<link rel="preload" as="image" media="(aspect-ratio > 1/1)" href="media/montage/demonstrations-five.jpg">
+<link rel="stylesheet" href="./styles.css?v=3e517efd490e"><link rel="stylesheet" href="./editions.css?v=9e936409be53">
+<script type="importmap">{"imports": {"./atlas.js": "./atlas.js?v=c5e691276e22", "./covers.js": "./covers.js?v=66bdd1805272", "./examples.js": "./examples.js?v=9bc3277c9b62", "./motion.js": "./motion.js?v=6b6496441ae2", "./page.js": "./page.js?v=4bf3ddf8701f", "./pair-reel.js": "./pair-reel.js?v=93ec016fa999", "./pair-wall.js": "./pair-wall.js?v=ba2425332e0b", "./player.js": "./player.js?v=a8be05685ebc", "./stack-feature.js": "./stack-feature.js?v=ede9db23c8ef"}}</script>
+<script type="module" src="./page.js?v=4bf3ddf8701f"></script>
+</head><body>
+<a class="skip" href="#dataset">Skip to the dataset</a>
+  <svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 5h3.6v14H7zm6.4 0H17v14h-3.6z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-paper" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/></symbol>
+      <symbol id="i-dataset" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v12c0 4 16 4 16 0v-12M4 11.5c0 4 16 4 16 0"/></symbol>
+      <symbol id="i-film" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m10 8.5 5.5 3.5-5.5 3.5z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-prev" viewBox="0 0 24 24"><path d="m14.5 5-7 7 7 7"/></symbol>
+      <symbol id="i-next" viewBox="0 0 24 24"><path d="m9.5 5 7 7-7 7"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+      <symbol id="i-recorded" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="m7 6 1.5-2h7L17 6"/><circle cx="12" cy="12.5" r="3.2"/></symbol>
+      <symbol id="i-proxy" viewBox="0 0 24 24"><path d="m12 2.7 8.4 4.6v9.4L12 21.3l-8.4-4.6V7.3zM3.6 7.3 12 12l8.4-4.7M12 12v9.3"/></symbol>
+      <symbol id="i-render" viewBox="0 0 24 24"><path d="m12 3 8.8 5-8.8 5-8.8-5zM3.2 12.1l8.8 5 8.8-5M3.2 16.3l8.8 5 8.8-5"/></symbol>
+      <symbol id="i-compare" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M12 5v14"/></symbol>
+    </defs>
+  </svg>
+
+<header class="over-cover"><div class="shell nav-bar"><a class="wordmark" href="#overview">Demo<span>Foundry</span></a>
+<nav aria-label="Page sections"><a href="#approach">Overview</a><a href="#dataset">Dataset</a><a href="#generation">Rendering</a></nav></div></header>
+<main>
+<section id="overview" class="hero">
+  <div class="cover-window">
+    <div id="cover-grid" class="cover-stage" aria-hidden="true"></div>
+  </div>
+  <div class="hero-title">
+  <h1><span class="project-name">Demo<span>Foundry</span><span class="sr-only">:</span></span>
+  <span class="paper-title">Toward Scalable Photorealistic Robot Data<br class="title-break"> with Coding Agents and Generative Rendering</span></h1>
+  <div class="hero-credits"><ul class="authors" aria-label="Authors">
+    <li><a href="https://robbinw.github.io/" target="_blank" rel="noopener noreferrer" aria-describedby="equal-contribution">Ruixiang Wang</a><sup>1,2,*</sup></li><li><a href="https://shinyueyao.github.io/" target="_blank" rel="noopener noreferrer" aria-describedby="equal-contribution">Xinyue Yao</a><sup>1,2,*</sup></li><li><a href="https://shinning-zhou.github.io/" target="_blank" rel="noopener noreferrer" aria-describedby="equal-contribution">Xuanning Zhou</a><sup>1,*</sup></li><li><a href="https://yuecideng.github.io/" target="_blank" rel="noopener noreferrer">Yueci Deng</a><sup>1,2</sup></li><li><a href="https://yysu.site/" target="_blank" rel="noopener noreferrer">Yongyi Su</a><sup>3</sup></li><li><a href="http://kuijia.site/" target="_blank" rel="noopener noreferrer">Kui Jia</a><sup>1,2</sup></li>
+  </ul>
+  <p class="affiliations"><span><sup>1</sup> CUHK-SZ</span><span><sup>2</sup> DexForce AI</span><span><sup>3</sup> FSU</span><span id="equal-contribution">* equal contribution</span></p>
+  </div><div class="resources" role="group" aria-label="Project resources">
+    <button class="button" type="button" disabled><svg aria-hidden="true"><use href="#i-paper"/></svg>Paper</button>
+    <button class="button" type="button" disabled><svg aria-hidden="true"><use href="#i-code"/></svg><span>Code<small>Link pending</small></span></button>
+    <button class="button" type="button" disabled><svg aria-hidden="true"><use href="#i-proxy"/></svg><span>Checkpoint<small>Link pending</small></span></button>
+    <a class="button" href="#recordings"><svg aria-hidden="true"><use href="#i-dataset"/></svg><span>Dataset<small>Browse samples</small></span></a>
+    <button class="button" type="button" id="watch-film" aria-haspopup="dialog"><svg aria-hidden="true"><use href="#i-play"/></svg>Video</button>
+  </div></div>
+  <div class="cover-foot shell"><button class="motion" data-motion="hero"></button></div>
+</section>
+<section class="chapter approach" id="approach"><div class="shell opening opening-panels"><div class="opening-copy"><p class="kicker">Method</p><h2>Overview</h2><p>We first pair real robot videos with simulated replays of the same actions. We train a video renderer on these pairs. In a new scene, a coding agent writes and runs a task program, and the renderer turns its simulated motion into a demonstration without human teleoperation.</p></div><figure class="plate"><a href="media/figures/method.webp" target="_blank" rel="noopener" aria-label="Enlarge figure: The agent builds real–proxy pairs, trains a renderer and executes programs in new scenes."><img loading="lazy" src="media/figures/method.webp" alt="The agent builds real–proxy pairs, trains a renderer and executes programs in new scenes."></a><figcaption>Fig. 2 · Pair construction, renderer training and execution in a new scene.</figcaption></figure></div></section>
+<section id="dataset" class="chapter"><div class="shell">
+  <div class="chapter-intro"><div><p class="kicker">01 / Paired dataset</p><h2>Constructing a real–proxy dataset</h2></div><p>We built a dataset of <strong>1,884 real–simulation video pairs</strong> from DROID, AgiBot World, RoboMIND and RH20T, totaling <strong>25.4 hours across camera views</strong>.</p></div>
+  <div class="dataset-content">
+  <section class="featured-pairs" id="recordings" aria-label="Real and simulated recordings">
+    <div id="pair-reel" aria-roledescription="carousel" role="region" aria-label="Compare six real recordings with their simulations" tabindex="0">
+    <div class="reel-stage"></div>
+    <div class="reel-controls">
+      <button type="button" data-step="-1" aria-label="Previous episode"><svg aria-hidden="true"><use href="#i-prev"/></svg></button>
+      <span class="reel-dots" role="group" aria-label="Nearby episodes"></span>
+      <button type="button" data-step="1" aria-label="Next episode"><svg aria-hidden="true"><use href="#i-next"/></svg></button>
+    </div>
+    <div class="reel-caption" aria-live="polite" aria-atomic="true"><h4></h4><p></p></div>
+    <div class="reel-camera-picker" role="group" aria-label="Camera view"></div>
+    <div class="reel-player-controls"></div>
+    <div class="reel-links"><button class="reel-inspect" type="button">Inspect episode ↗</button><span class="reel-position"></span></div>
+    </div>
+  </section>
+  <section class="atlas-section"><div class="subhead atlas-heading" id="paired-recordings"><div><h3 id="recordings-title" tabindex="-1">Paired recordings</h3><p>Each tile shows real footage on the left and its simulation on the right. Select an episode to explore its camera views.</p></div><button class="motion" data-motion="atlas"></button></div>
+  <div class="filters"><div class="filter-list" id="dataset-filters" role="group" aria-label="Filter recordings by dataset"></div><div class="wall-toolbar"><output id="pair-count" aria-live="polite"></output><div role="group" aria-label="Gallery layout" class="wall-switch"><button type="button" data-layout="wall" aria-pressed="true">Video wall</button><button type="button" data-layout="grid" aria-pressed="false">Grid</button></div></div></div>
+  <div id="pair-wall" aria-labelledby="recordings-title"></div>
+  <div id="atlas-grid" class="pair-grid" aria-labelledby="recordings-title"></div>
+  <div class="pagination" role="group" aria-label="Recording pages">
+    <button type="button" id="prev-page" aria-label="Previous page of episodes"><svg aria-hidden="true"><use href="#i-prev"/></svg> Previous</button>
+    <span id="page-number"></span>
+    <button type="button" id="next-page" aria-label="Next page of episodes">Next <svg aria-hidden="true"><use href="#i-next"/></svg></button>
+  </div>
+</section>
+</div></div></section>
+<section id="generation" class="chapter"><div class="shell">
+  <div class="chapter-intro"><div><p class="kicker">02 / Generative rendering</p><h2>Rendering new robot demonstrations</h2></div><p>The renderer learns how a simulated scene should look from paired demonstrations. In a new scene, a task program produces the proxy motion and action labels. A reference image supplies appearance.</p></div>
+  <div class="generation-content"><section class="gallery-section" id="rendered-demonstrations">
+  <div class="subhead"><div><h3>Rendered demonstrations</h3><p>Selected replays from all four sources, including training episodes. Select a render to see it at full size.</p></div><button class="motion" data-motion="generation"></button></div>
+  <div id="render-grid" class="row-grid"></div>
+  <button class="gallery-toggle" id="gallery-toggle" aria-controls="render-grid" aria-expanded="false"></button>
+  </section><div id="novel-feature"><article class="feature stack-case" aria-labelledby="stack-title">
+  <div class="subhead"><div>
+    <p class="kicker">Novel Platform</p>
+    <h3 id="stack-title">Generating demonstrations in a new scene</h3>
+    <p>For the Marvin M6S workcell, the coding agent translates a stacking instruction into a simulation program. The renderer uses a real camera frame to give the simulated motion the appearance of the physical workcell.</p>
+  </div></div>
+  <figure class="stack-pipeline">
+    <figcaption><span>Task instruction</span> “Place red on green with the left arm, then place blue on red with the right arm.”</figcaption>
+    <ol class="stack-route" aria-label="Block-stacking pipeline">
+      <li><img data-still="reference" src="media/marvin-matched/left-reference.jpg" alt="Real initial workcell, left wrist"><span>Real first frame</span></li>
+      <li><img data-still="layout" src="media/marvin-matched/left-layout.jpg" alt="Matched simulated workcell, left wrist"><span>Simulated scene</span></li>
+      <li class="stack-program"><pre aria-label="Task program outline"><code>left.stack(red, green)
+left.park()
+right.stack(blue, red)</code></pre><span>Task program outline</span></li>
+      <li><div data-clip="proxy"></div><span>Proxy video</span></li>
+      <li><div data-clip="render"></div><span>Rendered video</span></li>
+    </ol>
+    <div class="stack-toolbar">
+      <div class="pills" aria-label="Pipeline camera" role="group">
+        <button type="button" data-view="head" aria-pressed="false">Head camera</button>
+        <button type="button" data-view="left" aria-pressed="true">Left wrist</button>
+        <button type="button" data-view="right" aria-pressed="false">Right wrist</button>
+      </div>
+      <button type="button" class="motion" data-motion="pipeline"></button>
+    </div>
+  </figure>
+</article></div>
+</div>
+  <section id="domain-randomization" class="feature" aria-labelledby="domain-title"><div class="subhead"><div><h3 id="domain-title">Domain randomization</h3><p>Each row uses one simulated motion. Text prompts vary the objects, materials and lighting.</p></div><button type="button" class="motion" data-motion="domain"></button></div><div class="domain-row"><h4>Block stacking</h4><div class="domain-clips"><figure><video muted playsinline loop preload="none" data-src="media/domain-randomization/stacking__original.mp4" poster="media/domain-randomization/stacking__original.jpg" aria-label="Block stacking · Original appearance"></video><figcaption>Original appearance</figcaption></figure><figure><video muted playsinline loop preload="none" data-src="media/domain-randomization/stacking__block_colors.mp4" poster="media/domain-randomization/stacking__block_colors.jpg" aria-label="Block stacking · Purple, orange and cyan blocks"></video><figcaption>Purple, orange and cyan blocks</figcaption></figure><figure><video muted playsinline loop preload="none" data-src="media/domain-randomization/stacking__walnut_table.mp4" poster="media/domain-randomization/stacking__walnut_table.jpg" aria-label="Block stacking · Walnut tabletop"></video><figcaption>Walnut tabletop</figcaption></figure><figure><video muted playsinline loop preload="none" data-src="media/domain-randomization/stacking__white_room.mp4" poster="media/domain-randomization/stacking__white_room.jpg" aria-label="Block stacking · Daylit room"></video><figcaption>Daylit room</figcaption></figure></div></div><div class="domain-row"><h4>Container transfer</h4><div class="domain-clips"><figure><video muted playsinline loop preload="none" data-src="media/domain-randomization/can_transfer__original.mp4" poster="media/domain-randomization/can_transfer__original.jpg" aria-label="Container transfer · Original appearance"></video><figcaption>Original appearance</figcaption></figure><figure><video muted playsinline loop preload="none" data-src="media/domain-randomization/can_transfer__green_bottle.mp4" poster="media/domain-randomization/can_transfer__green_bottle.jpg" aria-label="Container transfer · Green bottle"></video><figcaption>Green bottle</figcaption></figure><figure><video muted playsinline loop preload="none" data-src="media/domain-randomization/can_transfer__cyan_magenta.mp4" poster="media/domain-randomization/can_transfer__cyan_magenta.jpg" aria-label="Container transfer · Cyan and magenta lighting"></video><figcaption>Cyan and magenta lighting</figcaption></figure><figure><video muted playsinline loop preload="none" data-src="media/domain-randomization/can_transfer__combined.mp4" poster="media/domain-randomization/can_transfer__combined.jpg" aria-label="Container transfer · Green bottle, oak table and red tray"></video><figcaption>Green bottle, oak table and red tray</figcaption></figure></div></div></section>
+</div></section>
+</main>
+<dialog id="viewer" aria-labelledby="viewer-title"><div class="modal-head"><div><p id="viewer-kicker"></p><h2 id="viewer-title"></h2></div><button class="circle dismiss" aria-label="Close viewer"><svg><use href="#i-close"/></svg></button></div><div id="viewer-body"></div></dialog>
+<noscript><p class="shell">Enable JavaScript to explore the comparisons, or <a href="media/overview/project-film.mp4?v=024c28a07d1f">watch the project video</a>.</p></noscript>
+</body></html>
