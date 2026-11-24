@@ -151,7 +151,7 @@ function inspectPair(scene,time=0) {
   cleanDetail=cameraSet(wrapper,scene,'detail',time);
 }
 const multi=atlas.filter(s=>s.cameras.length>=2);
-const featuredPairIds=['agibot-mallet','droid-019-guptalab','agibot-slot','droid-018-guptalab','rh20t-0003','droid-004-autolab'];
+const featuredPairIds=['droid-004-autolab','agibot-slot','droid-035-iprl','agibot-mallet','droid-043-iris','rh20t-0003'];
 multi.sort((a,b)=>(featuredPairIds.includes(a.id)?featuredPairIds.indexOf(a.id):100)-(featuredPairIds.includes(b.id)?featuredPairIds.indexOf(b.id):100));
 const chooser=id('multi-select');let cleanFeatured=()=>{};
 if (chooser) {
