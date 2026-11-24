@@ -25,6 +25,7 @@ html[data-cover=six] .cover-window {background-image:url(media/montage/demonstra
 .project-name>span:first-child {font:inherit;letter-spacing:inherit}
 .hero,header.over-cover {--cover-shadow:0 1px 2px #000a,0 3px 6px #0008,0 5px 12px #0004}
 .hero .hero-title,.hero .hero-title h1,.hero .cover-foot button,header.over-cover {text-shadow:var(--cover-shadow)}
+.hero .paper-title {text-shadow:0 1px 2px #0005,0 3px 7px #0003}
 .hero .project-name {
   display:inline-block;position:relative;isolation:isolate;
   text-shadow:0 .025em .045em #0009,0 .055em .11em #0006;
