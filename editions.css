@@ -51,7 +51,7 @@ html[data-cover=six] .cover-window {background-image:url(media/montage/demonstra
 .authors {font:500 17px/1.5 var(--sans);letter-spacing:0;gap:5px 20px;margin-top:23px}
 .authors a {text-decoration:none}
 .authors a:hover,.authors a:focus-visible {text-decoration:underline;text-underline-offset:4px}
-.affiliations {font:450 13px/1.5 var(--sans);margin-top:8px;flex-wrap:nowrap;column-gap:clamp(7px,1.1vw,16px)}
+.affiliations {font:450 13px/1.5 var(--sans);margin-top:8px;flex-wrap:wrap;column-gap:clamp(7px,1.1vw,16px)}
 .resources {margin-top:23px}
 .resources .button {font-size:14px;min-height:43px}
 .resources .button small {font-size:10px}
