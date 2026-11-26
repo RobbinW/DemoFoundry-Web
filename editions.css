@@ -358,3 +358,16 @@ html[data-edition] .hero { min-height:100vh; min-height:100dvh }
   .chapter-enter {animation:chapter-in 620ms cubic-bezier(.16,1,.3,1) backwards}
   :is(.chapter-enter,.hero .resources,.hero .hero-credits):focus-within {animation:none}
 }
+
+#citation {border-top:1px solid var(--line)}
+#citation pre {
+  margin:20px 0 0;
+  padding:clamp(16px,2vw,28px);
+  border:1px solid var(--line);
+  border-radius:6px;
+  background:#f1f4ee;
+  color:var(--ink);
+  font:14px/1.65 ui-monospace,monospace;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+}
